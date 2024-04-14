@@ -89,6 +89,20 @@ Unzip into `~/.fonts` and execute:
 fc-cache -f -v
 ```
 
+## Install Alacritty
+
+```
+apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+
+cargo install alacritty
+```
+Clone alacrity repo and execte from it:
+```
+sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
+sudo desktop-file-install extra/linux/Alacritty.desktop
+sudo update-desktop-database
+```
+
 ## Make alacritty default terminal
 *https://frantzroulet.com/blog/other/2018/12/26/how-to-choose-alacritty-as-default-terminal.html*
 
