@@ -1,5 +1,4 @@
 # My Pop!_OS setup :rocket:
-Setup 
 
 ## Generate SSH Keys
 
@@ -24,3 +23,85 @@ git config --global commit.gpgsign true
 git config --global user.signingkey <KEY_ID>
 ```
 
+## Install Zsh and set to be default shell
+*https://www.zsh.org/*
+
+```
+sudo apt install zsh
+zsh --version
+chsh -s $(which zsh)
+```
+- Logout to apply change of default shell
+- Choose option to empty .zshrc
+- logout and login again
+- Check installation okay with `$SHELL --version`
+
+## Setup ZSH
+
+Install plugins:
+```
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+
+git clone https://github.com/zsh-users/zsh-completions.git ~/.zsh/zsh-completions
+```
+Add the following to your `.zshrc`:
+```
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+fpath=(~/.zsh/zsh-completions/src $fpath)
+```
+
+## Install starship shell prompt
+```
+curl -sS https://starship.rs/install.sh | sh
+```
+
+## Install fzf
+```
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+```
+Then run install script
+
+## Install Rust lang
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+## Install rust software
+
+```
+cargo install fnm
+cargo install exa
+cargo install --locked bat
+```
+
+## Install nerd fonts
+
+```
+curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
+```
+
+Unzip into `~/.fonts` and execute:
+```
+fc-cache -f -v
+```
+
+## Make alacritty default terminal
+*https://frantzroulet.com/blog/other/2018/12/26/how-to-choose-alacritty-as-default-terminal.html*
+
+```
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $(which alacritty) 50
+sudo update-alternatives --config x-terminal-emulator
+```
+
+## Install configuration of alacritty
+
+- Place [alacritty.toml](alacritty.toml) in `$HOME/.config/alacritty/alacritty.toml`
+
+Install cattpuccin theme:
+```
+curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-macchiato.toml
+```

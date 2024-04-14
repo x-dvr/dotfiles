@@ -1,0 +1,30 @@
+[commit]
+	gpgsign = true
+[user]
+#	signingkey = <KEY_ID>
+	name = Denis Rodin
+	email = denis.rodin@proton.me
+[color]
+	ui = true
+[core]
+	editor = code --wait
+	autocrlf = input
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+[diff]
+    tool = vscode
+	submodule = log
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[alias]
+    aa = add .
+    cm = commit -m
+    cam = commit -am
+    st = status
+    bro = checkout -b
+	pushup = push --set-upstream origin HEAD
+    co = checkout
+    ls = branch -r
+    wipe = !git restore . && git co master && git reset --hard origin/master && git clean -fd && git pull origin master && git fetch -p && (git branch | grep -v master | xargs git branch -D)
