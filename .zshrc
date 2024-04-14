@@ -3,6 +3,10 @@ compinit
 
 fpath=(~/.zsh/zsh-completions/src $fpath)
 
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000000
+SAVEHIST=10000000
+
 eval "$(starship init zsh)"
 eval "$(fnm env --use-on-cd)"
 eval "$(fnm completions --shell zsh)"
