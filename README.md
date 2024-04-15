@@ -75,6 +75,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 cargo install fnm
 cargo install exa
+cargo install ripgrep
 cargo install --locked bat
 ```
 
@@ -122,6 +123,8 @@ curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritt
 
 ## Install go
 
+Download latest go toolchain from https://go.dev/dl/
+Then execute:
 ```
 mkdir ~/.go
 tar -C ~/.go -xzf go1.22.2.linux-amd64.tar.gz
