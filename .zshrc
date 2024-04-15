@@ -19,6 +19,8 @@ alias vim="nvim"
 alias cat="bat"
 
 export EDITOR="nvim"
+export GOPATH="$HOME/projects/go"
+export GOBIN="$HOME/.go/installed"
 export PATH="$PATH:$HOME/.go/go/bin"
 export PATH="$PATH:/opt/nvim-linux64/bin"
 
