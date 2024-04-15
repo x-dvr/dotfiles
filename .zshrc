@@ -19,6 +19,7 @@ alias vim="nvim"
 alias cat="bat"
 
 export EDITOR="nvim"
+export PATH="$PATH:$HOME/.go/go/bin"
 export PATH="$PATH:/opt/nvim-linux64/bin"
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

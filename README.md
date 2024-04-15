@@ -119,3 +119,10 @@ Install cattpuccin theme:
 ```
 curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-macchiato.toml
 ```
+
+## Install go
+
+```
+mkdir ~/.go
+tar -C ~/.go -xzf go1.22.2.linux-amd64.tar.gz
+```
