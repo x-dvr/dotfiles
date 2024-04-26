@@ -17,6 +17,7 @@ alias ll="exa -la"
 alias vi="nvim"
 alias vim="nvim"
 alias cat="bat"
+alias code="code -enable-features=UseOzonePlatform -ozone-platform=wayland"
 
 export EDITOR="nvim"
 export GOPATH="$HOME/.go"
