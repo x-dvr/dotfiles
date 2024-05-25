@@ -1,9 +1,7 @@
-[init]
-	defaultBranch = master
 [commit]
 	gpgsign = true
 [user]
-#	signingkey = <KEY_ID>
+	signingkey = BAE999991728DD8C
 	name = Denis Rodin
 	email = denis.rodin@proton.me
 [color]
@@ -26,7 +24,9 @@
     cam = commit -am
     st = status
     bro = checkout -b
-	pushup = push --set-upstream origin HEAD
+	pushup = "!pushup() { REMOTE=\"${2:-origin}\"; git push --set-upstream $REMOTE HEAD; }; pushup"
     co = checkout
     ls = branch -r
-    wipe = !git restore . && git co master && git reset --hard origin/master && git clean -fd && git pull origin master && git fetch -p && (git branch | grep -v master | xargs git branch -D)
+    wipe = "!wipe() { BRANCH=\"${1:-master}\"; REMOTE=\"${2:-origin}\"; git restore . && git co $BRANCH && git reset --hard $REMOTE/$BRANCH && git clean -fd && git pull $REMOTE $BRANCH && git fetch -p && (git branch | grep -v $BRANCH | xargs git branch -D); }; wipe"
+[init]
+	defaultBranch = master
