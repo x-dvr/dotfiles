@@ -17,7 +17,7 @@ alias ll="exa -la"
 alias vi="nvim"
 alias vim="nvim"
 alias cat="bat"
-alias code="code -enable-features=UseOzonePlatform -ozone-platform=wayland"
+alias code="codium"
 
 export EDITOR="nvim"
 export GOPATH="$HOME/.go"
@@ -28,3 +28,11 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+go_audit() {
+  go mod verify
+  go vet ./...
+  go run honnef.co/go/tools/cmd/staticcheck@latest -checks=all,-ST1000,-U1000 ./...
+  go run golang.org/x/vuln/cmd/govulncheck@latest -show verbose ./...
+  go test -race -buildvcs -vet=off ./...
+}
