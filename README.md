@@ -162,3 +162,8 @@ Update grub config:
 ```bash
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
+
+## Install fastfetch
+```bash
+pacman -S fastfetch
+```
