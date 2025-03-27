@@ -12,17 +12,22 @@ keybind = performable:ctrl+v=paste_from_clipboard
 keybind = performable:ctrl+a=select_all
 
 # UI
-keybind = performable:ctrl+up=increase_font_size:1
-keybind = performable:ctrl+left=reset_font_size
-keybind = performable:ctrl+down=decrease_font_size:1
+keybind = ctrl+shift+plus=increase_font_size:1
+keybind = ctrl+equal=reset_font_size
+keybind = ctrl+shift+eight=reset_font_size
+keybind = ctrl+minus=decrease_font_size:1
+keybind = ctrl+alt+up=resize_split:up,20
+keybind = ctrl+alt+down=resize_split:down,20
+keybind = ctrl+alt+left=resize_split:left,20
+keybind = ctrl+alt+right=resize_split:right,20
 
 # navigation
 keybind = performable:ctrl+h=new_split:right
 keybind = performable:ctrl+l=new_split:down
-keybind = performable:ctrl+u=goto_split:up
-keybind = performable:ctrl+n=goto_split:left
-keybind = performable:ctrl+e=goto_split:down
-keybind = performable:ctrl+i=goto_split:right
+keybind = ctrl+up=goto_split:up
+keybind = ctrl+left=goto_split:left
+keybind = ctrl+down=goto_split:down
+keybind = ctrl+right=goto_split:right
 
 # misc
-keybind = performable:ctrl+x=clear_screen
+keybind = performable:ctrl+alt+x=clear_screen
