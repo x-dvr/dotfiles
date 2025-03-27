@@ -1,0 +1,8 @@
+{
+    "window.zoomLevel": 0.8,
+    "workbench.colorTheme": "Catppuccin Macchiato",
+    "workbench.iconTheme": "catppuccin-macchiato",
+    "editor.fontFamily": "FiraCode Nerd Font Light",
+    "editor.fontSize": 13,
+    "editor.fontLigatures": true
+}
