@@ -41,6 +41,18 @@ git clone --depth=1 https://github.com/catppuccin/kde catppuccin-kde && cd catpp
 ./install.sh
 ```
 
+## Install Krohnkite
+Download script from releases:
+https://github.com/anametologin/krohnkite
+
+Install:
+```bash
+# install
+kpackagetool6 -t KWin/Script -i krohnkite-x.x.x.x.kwinscript
+# update
+kpackagetool6 -t KWin/Script -u krohnkite-x.x.x.x.kwinscript
+```
+
 ## Install Ghostty
 ```bash
 pacman -S ghostty
@@ -136,4 +148,17 @@ And then latest zig version:
 zvm i --zls master
 # or
 zvm i --zls 0.14.0
+```
+
+## Adjust grub screen
+Copy `splash.png` to /usr/share/endeavouros
+Prepare font:
+```bash
+sudo grub-mkfont -s 24 -o /boot/grub/font.pf2 ~/.fonts/FiraCodeNerdFont-Regular.ttf
+echo "GRUB_FONT=/boot/grub/font.pf2" | sudo tee -a /etc/default/grub
+echo "GRUB_DISABLE_OS_PROBER=false" | sudo tee -a /etc/default/grub
+```
+Update grub config:
+```bash
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
