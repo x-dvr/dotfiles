@@ -29,6 +29,9 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+bindkey '^H' backward-kill-word
+bindkey '5~' kill-word
+
 go_audit() {
   go mod verify
   go vet ./...
@@ -36,3 +39,5 @@ go_audit() {
   go run golang.org/x/vuln/cmd/govulncheck@latest -show verbose ./...
   go test -race -buildvcs -vet=off ./...
 }
+
+eval "$(ssh-agent -s)" > /dev/null

@@ -1,0 +1,28 @@
+theme = catppuccin-macchiato.conf
+background-opacity = 0.95
+
+# font-family = "JetBrainsMono Nerd Font"
+font-family = "FiraCode Nerd Font Light"
+
+shell-integration = zsh
+
+# better clipboard
+keybind = performable:ctrl+c=copy_to_clipboard
+keybind = performable:ctrl+v=paste_from_clipboard
+keybind = performable:ctrl+a=select_all
+
+# UI
+keybind = performable:ctrl+up=increase_font_size:1
+keybind = performable:ctrl+left=reset_font_size
+keybind = performable:ctrl+down=decrease_font_size:1
+
+# navigation
+keybind = performable:ctrl+h=new_split:right
+keybind = performable:ctrl+l=new_split:down
+keybind = performable:ctrl+u=goto_split:up
+keybind = performable:ctrl+n=goto_split:left
+keybind = performable:ctrl+e=goto_split:down
+keybind = performable:ctrl+i=goto_split:right
+
+# misc
+keybind = performable:ctrl+x=clear_screen
