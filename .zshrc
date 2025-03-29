@@ -24,13 +24,16 @@ export GOPATH="$HOME/.go"
 export GOBIN="$HOME/.go/bin"
 export PATH="$PATH:$HOME/.go/go/bin"
 export PATH="$PATH:$GOBIN"
-export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:$HOME/bin"
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 bindkey '^H' backward-kill-word
 bindkey '5~' kill-word
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
+bindkey '^U'      kill-region
 
 go_audit() {
   go mod verify
