@@ -7,6 +7,10 @@ font-family = "FiraCode Nerd Font Light"
 
 shell-integration = zsh
 
+keybind = alt+enter=toggle_fullscreen
+keybind = ctrl+enter=unbind
+keybind = ctrl+v=unbind
+
 # better clipboard
 keybind = performable:ctrl+alt+c=copy_to_clipboard
 keybind = performable:ctrl+alt+v=paste_from_clipboard
