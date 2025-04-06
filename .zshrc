@@ -14,12 +14,12 @@ eval "$(fnm completions --shell zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 alias ll="exa -la"
-alias vi="nvim"
-alias vim="nvim"
+alias vi="helix"
+alias vim="helix"
 alias cat="bat"
 alias code="codium"
 
-export EDITOR="nvim"
+export EDITOR="helix"
 export GOPATH="$HOME/.go"
 export GOBIN="$HOME/.go/bin"
 export PATH="$PATH:$HOME/.go/go/bin"

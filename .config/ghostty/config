@@ -8,9 +8,9 @@ font-family = "FiraCode Nerd Font Light"
 shell-integration = zsh
 
 # better clipboard
-keybind = performable:ctrl+c=copy_to_clipboard
-keybind = performable:ctrl+v=paste_from_clipboard
-keybind = performable:ctrl+a=select_all
+keybind = performable:ctrl+alt+c=copy_to_clipboard
+keybind = performable:ctrl+alt+v=paste_from_clipboard
+keybind = performable:ctrl+alt+a=select_all
 
 # UI
 keybind = ctrl+shift+plus=increase_font_size:1

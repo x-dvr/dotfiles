@@ -92,12 +92,14 @@ fpath=(~/.zsh/zsh-completions/src $fpath)
 curl -sS https://starship.rs/install.sh | sh
 ```
 
-## Install fzf, exa, ripgrep, bat
+## Install fzf, exa, ripgrep, bat, helix, lldb
 ```bash
 sudo pacman -S fzf
 sudo pacman -S exa
 sudo pacman -S ripgrep
 sudo pacman -S bat
+sudo pacman -S helix
+sudo pacman -S lldb
 ```
 
 ## Install nerd fonts
@@ -125,6 +127,16 @@ Then execute:
 ```bash
 mkdir ~/.go
 tar -C ~/.go -xzf go1.24.1.linux-amd64.tar.gz
+```
+
+## Install Go software
+```bash
+# debugger
+go install github.com/go-delve/delve/cmd/dlv@latest
+# language server
+go install golang.org/x/tools/gopls@latest
+# lint lsp
+go install github.com/nametake/golangci-lint-langserver@latest
 ```
 
 ## Install Rust lang
