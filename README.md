@@ -100,6 +100,7 @@ sudo pacman -S ripgrep
 sudo pacman -S bat
 sudo pacman -S helix
 sudo pacman -S lldb
+yay golangci-lint
 ```
 
 ## Install nerd fonts

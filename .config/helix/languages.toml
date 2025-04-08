@@ -16,7 +16,36 @@ indent = { tab-width = 2, unit = "\t" }
 command = "golangci-lint-langserver"
 
 [language-server.golangci-lint-lsp.config]
-command = ["golangci-lint", "run", "--out-format", "json", "--issues-exit-code=1"]
+command = ["golangci-lint", "run", "--output.json.path=stdout", "--show-stats=false", "--issues-exit-code=1"]
+
+[language-server.gopls]
+command = "gopls"
+
+[language-server.gopls.config]
+goimports = true
+"local" = "goimports"
+"staticcheck" = true
+"verboseOutput" = true
+completeUnimported = true
+"semanticTokens" = true
+usePlaceholders = true
+
+[language-server.gopls.config.analyses]
+"fieldalignment" = true
+"nilness" = true
+unusedparams = true
+unusedwrite = true
+useany = true
+
+[language-server.gopls.config.hints]
+assignVariableTypes = true
+compositeLiteralFields = true
+constantValues = true
+functionTypeParameters = true
+parameterNames = true
+rangeVariableTypes = true
+"assignVariableType" = true
+"compositeLiteralTypes" = true
 
 [[language]]
 name = "rust"
