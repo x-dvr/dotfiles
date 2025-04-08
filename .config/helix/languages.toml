@@ -22,7 +22,6 @@ command = ["golangci-lint", "run", "--output.json.path=stdout", "--show-stats=fa
 command = "gopls"
 
 [language-server.gopls.config]
-goimports = true
 "local" = "goimports"
 "staticcheck" = true
 "verboseOutput" = true
@@ -31,7 +30,6 @@ completeUnimported = true
 usePlaceholders = true
 
 [language-server.gopls.config.analyses]
-"fieldalignment" = true
 "nilness" = true
 unusedparams = true
 unusedwrite = true
