@@ -18,6 +18,7 @@ alias vi="helix"
 alias vim="helix"
 alias cat="bat"
 alias code="codium"
+alias hx="helix"
 
 export EDITOR="helix"
 export GOPATH="$HOME/.go"

@@ -8,7 +8,7 @@ auto-format = true
 comment-token = "//"
 block-comment-tokens = { start = "/*", end = "*/" }
 formatter = ["gofmt"]
-language-servers = [ "gopls", "golangci-lint-lsp" ]
+language-servers = [ "gopls", "golangci-lint-lsp", "codebook" ]
 # TODO: gopls needs utf-8 offsets?
 indent = { tab-width = 2, unit = "\t" }
 
@@ -48,3 +48,12 @@ rangeVariableTypes = true
 [[language]]
 name = "rust"
 formatter = { command = "rustfmt" }
+
+[language-server.codebook]
+command = "codebook-lsp"
+args = ["serve"]
+
+
+[[language]]
+name = "markdown"
+language-servers = ["codebook"]

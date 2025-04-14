@@ -25,7 +25,7 @@ git config --global user.signingkey <KEY_ID>
 
 ## Install VSCodium
 ```bash
-yay -S vscodium
+yay -S vscodium-bin
 ```
 
 ## Install Brave
@@ -179,4 +179,10 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 ## Install fastfetch
 ```bash
 pacman -S fastfetch
+```
+## Install codebook for spellchecking:
+Download from: https://github.com/blopker/codebook/releases
+Unarchive to `~/bin` folder:
+```bash
+tar -xvzf codebook-lsp-x86_64-unknown-linux-gnu.tar.gz -C ~/bin/
 ```
