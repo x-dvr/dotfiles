@@ -13,12 +13,14 @@ eval "$(fnm completions --shell zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+alias ls="exa"
 alias ll="exa -la"
 alias vi="helix"
 alias vim="helix"
 alias cat="bat"
 alias code="codium"
 alias hx="helix"
+alias z="zoxide"
 
 export EDITOR="helix"
 export GOPATH="$HOME/.go"
