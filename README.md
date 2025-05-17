@@ -103,6 +103,11 @@ sudo pacman -S lldb
 yay golangci-lint
 ```
 
+## Install yazi and deps.
+```bash
+sudo pacman -S yazi ffmpeg 7zip jq poppler fd zoxide imagemagick
+```
+
 ## Install nerd fonts
 https://www.nerdfonts.com/font-downloads
 ```bash
