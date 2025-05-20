@@ -1,5 +1,11 @@
 # My EOS setup :rocket:
 
+## Update
+
+```bash
+eos-update --yay
+```
+
 ## Generate SSH Keys
 
 Generate Key:
@@ -31,7 +37,7 @@ yay -S vscodium-bin
 ## Install Brave
 https://brave.com/
 
-Add cacppuccin theme: https://chromewebstore.google.com/detail/catppuccin-chrome-theme-m/cmpdlhmnmjhihmcfnigoememnffkimlk
+Add catppuccin theme: https://chromewebstore.google.com/detail/catppuccin-chrome-theme-m/cmpdlhmnmjhihmcfnigoememnffkimlk
 
 ## Install Catppuccin theme for KDE
 https://github.com/catppuccin/kde
@@ -92,7 +98,7 @@ fpath=(~/.zsh/zsh-completions/src $fpath)
 curl -sS https://starship.rs/install.sh | sh
 ```
 
-## Install fzf, exa, ripgrep, bat, helix, lldb
+## Install fzf, exa, ripgrep, bat, helix, lldb, hugo
 ```bash
 sudo pacman -S fzf
 sudo pacman -S exa
@@ -100,6 +106,7 @@ sudo pacman -S ripgrep
 sudo pacman -S bat
 sudo pacman -S helix
 sudo pacman -S lldb
+sudo pacman -S hugo
 yay golangci-lint
 ```
 
