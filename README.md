@@ -98,7 +98,7 @@ fpath=(~/.zsh/zsh-completions/src $fpath)
 curl -sS https://starship.rs/install.sh | sh
 ```
 
-## Install fzf, exa, ripgrep, bat, helix, lldb, hugo
+## Install fzf, exa, ripgrep, bat, helix, lldb, hugo, graphviz
 ```bash
 sudo pacman -S fzf
 sudo pacman -S exa
@@ -107,6 +107,7 @@ sudo pacman -S bat
 sudo pacman -S helix
 sudo pacman -S lldb
 sudo pacman -S hugo
+sudo pacman -S graphviz
 yay golangci-lint
 ```
 
