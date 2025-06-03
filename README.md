@@ -199,3 +199,15 @@ Unarchive to `~/bin` folder:
 ```bash
 tar -xvzf codebook-lsp-x86_64-unknown-linux-gnu.tar.gz -C ~/bin/
 ```
+
+## Install docker
+```bash
+sudo pacman -Syu
+sudo pacman -S docker
+
+sudo usermod -aG docker $USER
+
+sudo systemctl start docker
+sudo systemctl enable docker
+
+```
