@@ -161,6 +161,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ## Install rust software
 ```bash
 cargo install fnm
+cargo install cargo-audit
 ```
 
 ## Install Zig Lang

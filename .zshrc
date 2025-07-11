@@ -28,6 +28,7 @@ export GOBIN="$HOME/.go/bin"
 export PATH="$PATH:$HOME/.go/go/bin"
 export PATH="$PATH:$GOBIN"
 export PATH="$PATH:$HOME/bin"
+export PATH=$HOME/.local/bin:$PATH
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
