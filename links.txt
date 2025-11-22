@@ -1,0 +1,15 @@
+https://github.com/embassy-rs/embassy/blob/main/embassy-executor/src/raw/waker.rs
+https://github.com/richardanaya/executor/blob/master/src/lib.rs#L33
+https://github.com/smol-rs/async-task/blob/master/src/header.rs
+https://github.com/smol-rs/async-executor/blob/master/src/lib.rs
+https://os.phil-opp.com/async-await/
+https://tweedegolf.nl/en/blog/114/building-an-async-runtime-with-mio
+https://freedium.cfd/https://medium.com/@Neha8661/i-built-my-own-rust-async-runtime-in-200-lines-heres-why-you-should-too-82a3d131b1b2
+https://www.reddit.com/r/rust/comments/v8e9fa/local_async_executors_and_why_they_should_be_the/
+https://doc.rust-lang.org/std/panic/fn.catch_unwind.html
+
+
+https://configure.zsa.io/voyager/layouts/XegVB/latest/7
+https://goperf.dev/01-common-patterns/
+https://github.com/dariubs/GoBooks?tab=readme-ov-file#2023---shipping-go
+https://www.keybr.com/
