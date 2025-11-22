@@ -43,3 +43,4 @@ keybind = ctrl+q=close_surface
 
 # misc
 keybind = performable:ctrl+alt+x=clear_screen
+keybind = shift+enter=text:\n

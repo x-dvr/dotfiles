@@ -5,6 +5,9 @@ line-number = "relative"
 cursorline = true
 color-modes = true
 
+[editor.file-picker]
+hidden = false
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
@@ -46,7 +49,7 @@ w = "move_next_word_end"
 W = "move_next_long_word_end"
 h = "goto_line_start"
 o = "goto_line_end"
-g = { h = "goto_file_start", n = "goto_line_start",  i = "goto_line_end", u = "move_line_up", e = "move_line_down", o = "goto_last_line" }
+g = { h = "goto_file_start", n = ":new",  i = "goto_line_end", u = "move_line_up", e = "move_line_down", o = "goto_last_line" }
 A-u = "expand_selection"
 A-e = "shrink_selection"
 A-n = "select_prev_sibling"

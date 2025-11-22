@@ -2,10 +2,36 @@
     "window.zoomLevel": 0.8,
     "workbench.colorTheme": "Catppuccin Macchiato",
     "workbench.iconTheme": "catppuccin-macchiato",
-    "editor.fontFamily": "FiraCode Nerd Font Light",
+    "editor.fontFamily": "FiraCode Nerd Font", // FiraCode Nerd Font Light
     "editor.fontSize": 13,
     "editor.fontLigatures": true,
     "terminal.integrated.fontFamily": "FiraCode Nerd Font Light",
     "terminal.integrated.fontSize": 13,
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "cSpell.userWords": [
+        "anyerror",
+        "Catppuccin",
+        "comptime",
+        "deinit",
+        "goroutines",
+        "memset",
+        "superwizard",
+        "treester",
+        "usize"
+    ],
+    "zig.zls.enabled": "on",
+    "editor.tabSize": 2,
+    "editor.stickyTabStops": true,
+    "go.toolsManagement.autoUpdate": true,
+    "[rust]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "rust-lang.rust-analyzer",
+        // "editor.formatOnType": true,
+        // "editor.formatOnPaste": true
+    },
+    "rust-analyzer.inlayHints.typeHints.enable": false,
+    "rust-analyzer.inlayHints.parameterHints.enable": true,
+    "rust-analyzer.inlayHints.chainingHints.enable": false,
+    // "rust-analyzer.rustfmt.extraArgs": ["--edition", "2024"],
+    "rust-analyzer.rustfmt.overrideCommand": null
 }
