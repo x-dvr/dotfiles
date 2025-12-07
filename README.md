@@ -6,6 +6,14 @@
 eos-update --yay
 ```
 
+## Install Nvidia drivers
+
+```bash
+yay -S nvidia-inst
+nvidia-inst
+reboot
+```
+
 ## Generate SSH Keys
 
 Generate Key:
@@ -35,28 +43,8 @@ yay -S vscodium-bin
 ```
 
 ## Install Brave
-https://brave.com/
-
-Add catppuccin theme: https://chromewebstore.google.com/detail/catppuccin-chrome-theme-m/cmpdlhmnmjhihmcfnigoememnffkimlk
-
-## Install Catppuccin theme for KDE
-https://github.com/catppuccin/kde
-
 ```bash
-git clone --depth=1 https://github.com/catppuccin/kde catppuccin-kde && cd catppuccin-kde
-./install.sh
-```
-
-## Install Krohnkite
-Download script from releases:
-https://github.com/anametologin/krohnkite
-
-Install:
-```bash
-# install
-kpackagetool6 -t KWin/Script -i krohnkite-x.x.x.x.kwinscript
-# update
-kpackagetool6 -t KWin/Script -u krohnkite-x.x.x.x.kwinscript
+yay -Sy brave-bin
 ```
 
 ## Install Ghostty
