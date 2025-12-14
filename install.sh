@@ -3,11 +3,12 @@
 sudo pacman -Syu
 eos-update --yay
 
-sudo pacman -S ttf-font-nerd ttf-font-awesome fastfetch zsh stow fzf eza ripgrep bat btop kitty starship
+sudo pacman -S ttf-font-nerd ttf-firacode-nerd ttf-font-awesome fastfetch zsh stow fzf eza ripgrep bat btop kitty starship
 sudo pacman -S yazi ffmpeg 7zip jq poppler fd zoxide imagemagick
 sudo pacman -S zed helix nvim lldb hugo graphviz docker
 sudo pacman -S cosmic
 
+yay -S ttf-jetbrains-mono-nerd
 yay -S nvidia-dkms nvidia-inst
 yay -S brave-bin
 yay -S vscodium-bin
@@ -21,7 +22,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-sy
 git clone https://github.com/zsh-users/zsh-completions.git ~/.zsh/zsh-completions
 
 # Setup grub
-sudo grub-mkfont -s 24 -o /boot/grub/font.pf2 /usr/share/fonts/TTF/FiraCodeNerdFont-Regular.ttf
+sudo grub-mkfont -s 28 -o /boot/grub/font.pf2 /usr/share/fonts/TTF/FiraCodeNerdFont-Regular.ttf
 echo "GRUB_FONT=/boot/grub/font.pf2" | sudo tee -a /etc/default/grub
 echo "GRUB_DISABLE_OS_PROBER=false" | sudo tee -a /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
