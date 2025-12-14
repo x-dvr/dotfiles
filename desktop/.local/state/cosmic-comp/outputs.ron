@@ -14,7 +14,7 @@
         ]: [
             (
                 mode: ((3840, 2160), Some(60000)),
-                vrr: r#false,
+                vrr: r#true,
                 scale: 1.75,
                 transform: Normal,
                 position: (0, 0),
@@ -24,12 +24,30 @@
             (
                 mode: ((3840, 2160), Some(60000)),
                 vrr: r#false,
-                scale: 2.25,
+                scale: 1.75,
                 transform: Normal,
-                position: (2194, 274),
+                position: (2194, 0),
                 enabled: r#true,
                 max_bpc: Some(12),
                 xwayland_primary: false,
+            ),
+        ],
+        [
+            (
+                connector: "eDP-1",
+                make: "Samsung Display Corp.",
+                model: "0xA029",
+            ),
+        ]: [
+            (
+                mode: ((3840, 2160), Some(60000)),
+                vrr: r#false,
+                scale: 1.75,
+                transform: Normal,
+                position: (0, 0),
+                enabled: r#true,
+                max_bpc: Some(12),
+                xwayland_primary: true,
             ),
         ],
     },

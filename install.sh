@@ -32,7 +32,7 @@ sudo systemctl start docker
 sudo systemctl enable docker
 
 # Prepare dotfiles
-cd ~/dotfiles/stow
+cd ~/dotfiles
 stow terminal
 stow dev
 stow desktop

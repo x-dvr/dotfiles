@@ -1,7 +1,7 @@
 [commit]
 	gpgsign = true
 [user]
-	signingkey = 4632C62D9D029335
+	signingkey = 9AB7D4CFE6463C5B
 	name = Denis Rodin
 	email = denis.rodin@proton.me
 [color]

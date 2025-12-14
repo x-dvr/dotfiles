@@ -13,7 +13,7 @@ eval "$(fnm completions --shell zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-alias ls="exa"
+alias ls="eza"
 alias ll="eza -la"
 alias vi="nvim"
 alias vim="nvim"
