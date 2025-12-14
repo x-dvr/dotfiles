@@ -1,0 +1,32 @@
+[commit]
+	gpgsign = true
+[user]
+	signingkey = 4632C62D9D029335
+	name = Denis Rodin
+	email = denis.rodin@proton.me
+[color]
+	ui = true
+[core]
+	autocrlf = input
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+[diff]
+    tool = vscode
+	submodule = log
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[alias]
+    aa = add .
+    cm = commit -m
+    cmn = commit --no-verify -m
+    cam = commit -am
+    st = status
+    bro = checkout -b
+	pushup = "!pushup() { REMOTE=\"${2:-origin}\"; git push --set-upstream $REMOTE HEAD; }; pushup"
+    co = checkout
+    ls = branch -r
+    wipe = "!wipe() { BRANCH=\"${1:-master}\"; REMOTE=\"${2:-origin}\"; git restore . && git co $BRANCH && git reset --hard $REMOTE/$BRANCH && git clean -fd && git pull $REMOTE $BRANCH && git fetch -p && (git branch | grep -v $BRANCH | xargs git branch -D); }; wipe"
+[init]
+	defaultBranch = master

@@ -1,0 +1,59 @@
+[[language]]
+name = "go"
+scope = "source.go"
+injection-regex = "go"
+file-types = ["go"]
+roots = ["go.work", "go.mod"]
+auto-format = true
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+formatter = ["gofmt"]
+language-servers = [ "gopls", "golangci-lint-lsp", "codebook" ]
+# TODO: gopls needs utf-8 offsets?
+indent = { tab-width = 2, unit = "\t" }
+
+[language-server.golangci-lint-lsp]
+command = "golangci-lint-langserver"
+
+[language-server.golangci-lint-lsp.config]
+command = ["golangci-lint", "run", "--output.json.path=stdout", "--show-stats=false", "--issues-exit-code=1"]
+
+[language-server.gopls]
+command = "gopls"
+
+[language-server.gopls.config]
+"local" = "goimports"
+"staticcheck" = true
+"verboseOutput" = true
+completeUnimported = true
+"semanticTokens" = true
+usePlaceholders = true
+
+[language-server.gopls.config.analyses]
+"nilness" = true
+unusedparams = true
+unusedwrite = true
+useany = true
+
+[language-server.gopls.config.hints]
+assignVariableTypes = true
+compositeLiteralFields = true
+constantValues = true
+functionTypeParameters = true
+parameterNames = true
+rangeVariableTypes = true
+"assignVariableType" = true
+"compositeLiteralTypes" = true
+
+[[language]]
+name = "rust"
+formatter = { command = "rustfmt" }
+
+[language-server.codebook]
+command = "codebook-lsp"
+args = ["serve"]
+
+
+[[language]]
+name = "markdown"
+language-servers = ["codebook"]

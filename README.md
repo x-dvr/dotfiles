@@ -1,17 +1,11 @@
-# My EOS setup :rocket:
+# My Linux setup :rocket:
 
-## Update
-
-```bash
-eos-update --yay
-```
-
-## Install Nvidia drivers
+## Install
 
 ```bash
-yay -S nvidia-inst
-nvidia-inst
-reboot
+git clone git@github.com:x-dvr/dotfiles.git
+cd dotfiles
+bash ./install.sh
 ```
 
 ## Generate SSH Keys
@@ -35,92 +29,6 @@ gpg --armor --export <KEY_ID>
 
 git config --global commit.gpgsign true
 git config --global user.signingkey <KEY_ID>
-```
-
-## Install VSCodium
-```bash
-yay -S vscodium-bin
-```
-
-## Install Brave
-```bash
-yay -Sy brave-bin
-```
-
-## Install Ghostty
-```bash
-pacman -S ghostty
-```
-
-## Install Zsh and set to be default shell
-*https://www.zsh.org/*
-
-```bash
-sudo pacman -S zsh
-zsh --version
-chsh -s $(which zsh)
-```
-- Logout to apply change of default shell
-- Choose option to empty .zshrc
-- logout and login again
-- Check installation okay with `$SHELL --version`
-
-## Setup Zsh
-Install plugins:
-```bash
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
-
-git clone https://github.com/zsh-users/zsh-completions.git ~/.zsh/zsh-completions
-```
-Add the following to your `.zshrc`:
-```bash
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-fpath=(~/.zsh/zsh-completions/src $fpath)
-```
-
-## Install starship shell prompt
-```bash
-curl -sS https://starship.rs/install.sh | sh
-```
-
-## Install fzf, exa, ripgrep, bat, helix, lldb, hugo, graphviz
-```bash
-sudo pacman -S fzf
-sudo pacman -S exa
-sudo pacman -S ripgrep
-sudo pacman -S bat
-sudo pacman -S helix
-sudo pacman -S lldb
-sudo pacman -S hugo
-sudo pacman -S graphviz
-yay golangci-lint
-```
-
-## Install yazi and deps.
-```bash
-sudo pacman -S yazi ffmpeg 7zip jq poppler fd zoxide imagemagick
-```
-
-## Install nerd fonts
-https://www.nerdfonts.com/font-downloads
-```bash
-# Download
-curl -OL https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FiraCode.zip
-curl -OL https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Go-Mono.zip
-curl -OL https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/JetBrainsMono.zip
-curl -OL https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Lekton.zip
-# Unzip
-unzip FiraCode.zip -d ~/.fonts
-unzip Go-Mono.zip -d ~/.fonts
-unzip JetBrainsMono.zip -d ~/.fonts
-unzip Lekton.zip -d ~/.fonts
-```
-Execute:
-```bash
-fc-cache -f -v
 ```
 
 ## Install Go lang
@@ -165,38 +73,9 @@ zvm i --zls master
 zvm i --zls 0.14.0
 ```
 
-## Adjust grub screen
-Copy `splash.png` to /usr/share/endeavouros
-Prepare font:
-```bash
-sudo grub-mkfont -s 24 -o /boot/grub/font.pf2 ~/.fonts/FiraCodeNerdFont-Regular.ttf
-echo "GRUB_FONT=/boot/grub/font.pf2" | sudo tee -a /etc/default/grub
-echo "GRUB_DISABLE_OS_PROBER=false" | sudo tee -a /etc/default/grub
-```
-Update grub config:
-```bash
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-```
-
-## Install fastfetch
-```bash
-pacman -S fastfetch
-```
 ## Install codebook for spellchecking:
 Download from: https://github.com/blopker/codebook/releases
 Unarchive to `~/bin` folder:
 ```bash
 tar -xvzf codebook-lsp-x86_64-unknown-linux-gnu.tar.gz -C ~/bin/
-```
-
-## Install docker
-```bash
-sudo pacman -Syu
-sudo pacman -S docker
-
-sudo usermod -aG docker $USER
-
-sudo systemctl start docker
-sudo systemctl enable docker
-
 ```

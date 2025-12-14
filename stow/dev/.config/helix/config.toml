@@ -1,0 +1,33 @@
+theme = "catppuccin_frappe"
+
+[editor]
+line-number = "relative"
+cursorline = true
+color-modes = true
+
+[editor.file-picker]
+hidden = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+
+[keys.insert]
+"C-ret" = "completion"
+
+# At most one section each of 'keys.normal', 'keys.' and 'keys.select'
+[keys.normal]
+"tab" = "completion"
+"C-/" = "toggle_comments"
+"C-." = ":open ~/.config/helix/config.toml"
+"C->" = ":config-reload"
+C-z = "undo"
+C-r = "redo"
+
+[keys.select]
+C-z = "undo"
+C-r = "redo"

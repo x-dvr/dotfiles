@@ -1,0 +1,36 @@
+(
+    config: {
+        [
+            (
+                connector: "DP-3",
+                make: "Philips Consumer Electronics Company",
+                model: "27M2N3800A",
+            ),
+            (
+                connector: "eDP-1",
+                make: "Samsung Display Corp.",
+                model: "0xA029",
+            ),
+        ]: [
+            (
+                mode: ((3840, 2160), Some(60000)),
+                vrr: r#false,
+                scale: 1.75,
+                transform: Normal,
+                position: (0, 0),
+                enabled: r#true,
+                xwayland_primary: true,
+            ),
+            (
+                mode: ((3840, 2160), Some(60000)),
+                vrr: r#false,
+                scale: 2.25,
+                transform: Normal,
+                position: (2194, 274),
+                enabled: r#true,
+                max_bpc: Some(12),
+                xwayland_primary: false,
+            ),
+        ],
+    },
+)
