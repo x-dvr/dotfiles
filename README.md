@@ -48,34 +48,3 @@ go install golang.org/x/tools/gopls@latest
 # lint lsp
 go install github.com/nametake/golangci-lint-langserver@latest
 ```
-
-## Install Rust lang
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-
-## Install rust software
-```bash
-cargo install fnm
-cargo install cargo-audit
-```
-
-## Install Zig Lang
-First install zvm:
-```bash
-curl https://raw.githubusercontent.com/tristanisham/zvm/master/install.sh | bash
-source ~/.zshenv
-```
-And then latest zig version:
-```bash
-zvm i --zls master
-# or
-zvm i --zls 0.14.0
-```
-
-## Install codebook for spellchecking:
-Download from: https://github.com/blopker/codebook/releases
-Unarchive to `~/bin` folder:
-```bash
-tar -xvzf codebook-lsp-x86_64-unknown-linux-gnu.tar.gz -C ~/bin/
-```

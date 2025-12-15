@@ -32,6 +32,20 @@ sudo usermod -aG docker $USER
 sudo systemctl start docker
 sudo systemctl enable docker
 
+# Setup Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo install cargo-update
+
+# Install cargo software
+cargo install fnm
+cargo install cargo-audit
+cargo install codebook-lsp
+
+# Setup Zig (zvm)
+curl https://raw.githubusercontent.com/tristanisham/zvm/master/install.sh | bash
+source ~/.zshenv
+zvm i --zls master
+
 # Prepare dotfiles
 cd ~/dotfiles
 stow terminal
