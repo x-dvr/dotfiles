@@ -34,11 +34,11 @@ export PATH=$HOME/.local/bin:$PATH
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# bindkey '^H' backward-kill-word
-# bindkey '5~' kill-word
-# bindkey '^[[1;5D' backward-word
-# bindkey '^[[1;5C' forward-word
-# bindkey '^U'      kill-region
+bindkey '^H' backward-kill-word
+bindkey '5~' kill-word
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
+bindkey '^U'      kill-region
 
 go_audit() {
   go mod verify
