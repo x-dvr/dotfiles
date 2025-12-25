@@ -49,4 +49,6 @@ go install github.com/go-delve/delve/cmd/dlv@latest
 go install golang.org/x/tools/gopls@latest
 # lint lsp
 go install github.com/nametake/golangci-lint-langserver@latest
+# update tool
+go install github.com/nao1215/gup@latest
 ```
