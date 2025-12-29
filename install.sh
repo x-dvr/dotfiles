@@ -52,6 +52,28 @@ stow terminal
 stow dev
 stow desktop
 
+# Install Go manager
+curl -fsSL https://raw.githubusercontent.com/x-dvr/gm/master/install.sh | bash
+source ~/.zshenv
+
+# Install Go toolchain
+gm i latest
+
+# Install Go software
+# debugger
+go install github.com/go-delve/delve/cmd/dlv@latest
+# language server
+go install golang.org/x/tools/gopls@latest
+# lint lsp
+go install github.com/nametake/golangci-lint-langserver@latest
+# update tool
+go install github.com/nao1215/gup@latest
+# cobra cli
+go install github.com/spf13/cobra-cli@latest
+# go releaser
+go install github.com/goreleaser/goreleaser/v2@latest
+
+
 # Setup nvidia
 nvidia-inst
 reboot

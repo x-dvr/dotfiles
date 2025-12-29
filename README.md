@@ -32,23 +32,3 @@ gpg --armor --export <KEY_ID>
 git config --global commit.gpgsign true
 git config --global user.signingkey <KEY_ID>
 ```
-
-## Install Go lang
-Download latest go toolchain from https://go.dev/dl/
-Then execute:
-```bash
-mkdir ~/.go
-tar -C ~/.go -xzf go1.24.1.linux-amd64.tar.gz
-```
-
-## Install Go software
-```bash
-# debugger
-go install github.com/go-delve/delve/cmd/dlv@latest
-# language server
-go install golang.org/x/tools/gopls@latest
-# lint lsp
-go install github.com/nametake/golangci-lint-langserver@latest
-# update tool
-go install github.com/nao1215/gup@latest
-```

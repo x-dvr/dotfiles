@@ -11,5 +11,6 @@ cargo install-update -a
 # zig
 zvm upgrade
 
-# update go soft
+# go
+gm up
 gup update

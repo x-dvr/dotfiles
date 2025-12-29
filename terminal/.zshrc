@@ -24,10 +24,6 @@ alias z="zoxide"
 alias zed="zeditor"
 
 export EDITOR="helix"
-export GOPATH="$HOME/.go"
-export GOBIN="$HOME/.go/bin"
-export PATH="$PATH:$HOME/.go/go/bin"
-export PATH="$PATH:$GOBIN"
 export PATH="$PATH:$HOME/bin"
 export PATH=$HOME/.local/bin:$PATH
 

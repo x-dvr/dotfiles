@@ -42,9 +42,9 @@
             (
                 mode: ((3840, 2160), Some(60000)),
                 vrr: r#false,
-                scale: 1.75,
+                scale: 2.25,
                 transform: Normal,
-                position: (2194, 0),
+                position: (2194, 274),
                 enabled: r#true,
                 max_bpc: Some(12),
                 xwayland_primary: false,
