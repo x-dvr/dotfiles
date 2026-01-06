@@ -73,6 +73,8 @@ go install github.com/spf13/cobra-cli@latest
 # go releaser
 go install github.com/goreleaser/goreleaser/v2@latest
 
+# Setup integrated video
+sudo pacman -S vulkan-intel
 
 # Setup nvidia
 nvidia-inst
