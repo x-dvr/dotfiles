@@ -73,6 +73,9 @@ go install github.com/spf13/cobra-cli@latest
 # go releaser
 go install github.com/goreleaser/goreleaser/v2@latest
 
+# install bun
+curl -fsSL https://bun.sh/install | bash
+
 # Setup integrated video
 sudo pacman -S vulkan-intel
 

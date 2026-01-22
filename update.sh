@@ -14,3 +14,6 @@ zvm upgrade
 # go
 gm up
 gup update
+
+# bun
+bun upgrade

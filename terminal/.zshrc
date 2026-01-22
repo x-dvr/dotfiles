@@ -56,3 +56,10 @@ function y() {
 eval "$(ssh-agent -s)" > /dev/null
 
 fastfetch
+
+# bun completions
+[ -s "/home/vir/.bun/_bun" ] && source "/home/vir/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
