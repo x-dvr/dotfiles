@@ -8,5 +8,6 @@
     "editor.allowVariableFonts": false,
     "editor.fontLigatures": true,
     "git.confirmSync": false,
-    "explorer.confirmDelete": false
+    "explorer.confirmDelete": false,
+    "workbench.sideBar.location": "right"
 }
