@@ -1,0 +1,12 @@
+{
+    "workbench.iconTheme": "catppuccin-frappe",
+    "workbench.colorTheme": "Catppuccin Frappé",
+    "catppuccin.accentColor": "lavender",
+    "claudeCode.preferredLocation": "panel",
+    "editor.minimap.enabled": false,
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "editor.allowVariableFonts": false,
+    "editor.fontLigatures": true,
+    "git.confirmSync": false,
+    "explorer.confirmDelete": false
+}

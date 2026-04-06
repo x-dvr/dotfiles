@@ -28,12 +28,12 @@
         },
         {
             "type": "packages",
-            "key": "   Packages",
+            "key": "   Packages",
             "keyColor": "green"
         },
         {
             "type": "display",
-            "key": "   Display",
+            "key": "  \uF108 Display",
             "keyColor": "green"
         },
         {
@@ -62,7 +62,7 @@
         {
             "type": "cpu",
             "format": "{1}",
-            "key": "   CPU",
+            "key": "  \uF2DB CPU",
             "keyColor": "blue"
         },
         {
@@ -74,12 +74,12 @@
         {
             "type": "gpu",
             "format": "{3}",
-            "key": "   GPU Driver",
+            "key": "  󰛡 GPU Driver",
             "keyColor": "magenta"
         },
         {
              "type": "memory",
-            "key": "  ﬙ Memory",
+            "key": "  󰍛 Memory",
             "keyColor": "magenta"
         },      
         {
