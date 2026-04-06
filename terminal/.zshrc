@@ -53,6 +53,14 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+function claude() {
+	export CLAUDE_CONFIG_DIR="$HOME/.claude"
+}
+
+function claude_max() {
+	export CLAUDE_CONFIG_DIR="$HOME/.claude-max"
+}
+
 eval "$(ssh-agent -s)" > /dev/null
 
 fastfetch

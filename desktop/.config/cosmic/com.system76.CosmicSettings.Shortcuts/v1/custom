@@ -3,8 +3,7 @@
         modifiers: [
             Super,
         ],
-        key: "space",
-    ): System(Launcher),
+    ): Disable,
     (
         modifiers: [
             Super,
@@ -15,7 +14,8 @@
         modifiers: [
             Super,
         ],
-    ): Disable,
+        key: "space",
+    ): System(Launcher),
     (
         modifiers: [
             Super,

@@ -10,7 +10,7 @@
             (
                 mode: ((3840, 2160), Some(60000)),
                 vrr: r#false,
-                scale: 1.75,
+                scale: 2.0,
                 transform: Normal,
                 position: (0, 0),
                 enabled: r#true,
