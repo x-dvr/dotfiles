@@ -5,7 +5,7 @@ eos-update --yay
 
 sudo pacman -S ttf-font-nerd ttf-firacode-nerd ttf-font-awesome fastfetch zsh stow fzf eza ripgrep bat btop kitty starship
 sudo pacman -S yazi ffmpeg 7zip jq poppler fd zoxide imagemagick
-sudo pacman -S zed helix nvim lldb hugo graphviz docker
+sudo pacman -S zed helix neovim lldb hugo graphviz docker
 sudo pacman -S cosmic
 
 yay -S ttf-jetbrains-mono-nerd
