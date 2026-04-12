@@ -1,18 +1,29 @@
 #!/bin/bash
 
 sudo pacman -Syu
-eos-update --yay
+paru -Syu
 
-sudo pacman -S ttf-font-nerd ttf-firacode-nerd ttf-font-awesome fastfetch zsh stow fzf eza ripgrep bat btop kitty starship
-sudo pacman -S yazi ffmpeg 7zip jq poppler fd zoxide imagemagick
-sudo pacman -S zed helix neovim lldb hugo graphviz docker
-sudo pacman -S cosmic
+sudo pacman -Sy ttf-font-nerd ttf-firacode-nerd ttf-font-awesome stow fzf eza ripgrep bat btop kitty starship
+sudo pacman -Sy yazi ffmpeg 7zip jq poppler fd zoxide imagemagick
+sudo pacman -Sy zed helix neovim lldb hugo graphviz docker
+# Setup integrated video
+sudo pacman -Sy vulkan-intel
 
-yay -S ttf-jetbrains-mono-nerd
-yay -S nvidia-dkms nvidia-inst
-yay -S brave-bin
-yay -S vscodium-bin
-yay -S golangci-lint
+paru -S ttf-jetbrains-mono-nerd
+paru -S brave-bin
+paru -S vscodium-bin
+paru -S golangci-lint
+
+# Prepare dotfiles
+cd ~/dotfiles
+rm ~/.zshrc
+rm ~/.zshenv
+stow terminal
+stow dev
+rm -rf ~/.config/cosmic
+rm -rf ~/.local/state/cosmic
+rm -rf ~/.local/state/cosmic-comp
+stow desktop
 
 chsh -s $(which zsh)
 
@@ -22,7 +33,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-sy
 git clone https://github.com/zsh-users/zsh-completions.git ~/.zsh/zsh-completions
 
 # Setup grub
-sudo grub-mkfont -s 28 -o /boot/grub/font.pf2 /usr/share/fonts/TTF/FiraCodeNerdFont-Regular.ttf
+sudo grub-mkfont -s 32 -o /boot/grub/font.pf2 /usr/share/fonts/TTF/FiraCodeNerdFont-Regular.ttf
 echo "GRUB_FONT=/boot/grub/font.pf2" | sudo tee -a /etc/default/grub
 echo "GRUB_DISABLE_OS_PROBER=false" | sudo tee -a /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
@@ -34,23 +45,18 @@ sudo systemctl enable docker
 
 # Setup Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-cargo install cargo-update
+. "$HOME/.cargo/env"
 
 # Install cargo software
 cargo install fnm
 cargo install cargo-audit
 cargo install codebook-lsp
+cargo install cargo-update
 
 # Setup Zig (zvm)
 curl https://raw.githubusercontent.com/tristanisham/zvm/master/install.sh | bash
 source ~/.zshenv
 zvm i --zls master
-
-# Prepare dotfiles
-cd ~/dotfiles
-stow terminal
-stow dev
-stow desktop
 
 # Install Go manager
 curl -fsSL https://raw.githubusercontent.com/x-dvr/gm/master/install.sh | bash
@@ -76,9 +82,6 @@ go install github.com/goreleaser/goreleaser/v2@latest
 # install bun
 curl -fsSL https://bun.sh/install | bash
 
-# Setup integrated video
-sudo pacman -S vulkan-intel
-
 # Setup nvidia
-nvidia-inst
+# nvidia-inst
 reboot

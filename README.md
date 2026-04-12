@@ -1,6 +1,8 @@
 # My Linux setup :rocket:
 
-Installation script is expected to be executed on EndeavorOS with Gnome DE installed. Probably works on other flavors of EndeavorOS and Arch.
+Installation script is expected to be executed on CachyOS with Cosmic DE installed. Probably works on other flavors of Arch.
+
+note: during installation of cachyos uncheck insallation of fish shell
 
 ## Install
 
