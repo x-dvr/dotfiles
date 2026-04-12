@@ -1,6 +1,5 @@
 {
     "workbench.iconTheme": "catppuccin-frappe",
-    "workbench.colorTheme": "Catppuccin Frappé",
     "catppuccin.accentColor": "lavender",
     "claudeCode.preferredLocation": "panel",
     "editor.minimap.enabled": false,
@@ -9,5 +8,6 @@
     "editor.fontLigatures": true,
     "git.confirmSync": false,
     "explorer.confirmDelete": false,
-    "workbench.sideBar.location": "right"
+    "workbench.sideBar.location": "right",
+    "workbench.colorTheme": "Catppuccin Frappé"
 }

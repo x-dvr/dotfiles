@@ -1,0 +1,4 @@
+dev/.config/VSCodium/*
+!dev/.config/VSCodium/User
+dev/.config/VSCodium/User/*
+!dev/.config/VSCodium/User/settings.json

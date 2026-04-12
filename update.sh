@@ -1,8 +1,7 @@
 #!/bin/bash
 
 sudo pacman -Syu
-yay -Syu
-eos-update --yay
+paru -Syu
 
 # rust
 rustup self update
@@ -17,3 +16,11 @@ gup update
 
 # bun
 bun upgrade
+
+# zsh plugins
+cd ~/.zsh/zsh-autosuggestions
+git pull
+cd ~/.zsh/zsh-completions
+git pull
+cd ~/.zsh/zsh-syntax-highlighting
+git pull
