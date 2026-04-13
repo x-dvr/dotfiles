@@ -83,5 +83,4 @@ go install github.com/goreleaser/goreleaser/v2@latest
 curl -fsSL https://bun.sh/install | bash
 
 # Setup nvidia
-# nvidia-inst
 reboot
