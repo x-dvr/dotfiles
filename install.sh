@@ -78,6 +78,8 @@ go install github.com/nao1215/gup@latest
 go install github.com/spf13/cobra-cli@latest
 # go releaser
 go install github.com/goreleaser/goreleaser/v2@latest
+# hacker-news reader
+go install github.com/bensadeh/circumflex/cmd/clx@latest
 
 # install bun
 curl -fsSL https://bun.sh/install | bash
