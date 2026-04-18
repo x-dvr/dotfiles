@@ -3,9 +3,14 @@
 sudo pacman -Syu
 paru -Syu
 
-sudo pacman -Sy ttf-font-nerd ttf-firacode-nerd ttf-font-awesome stow fzf eza ripgrep bat btop kitty starship
-sudo pacman -Sy yazi ffmpeg 7zip jq poppler fd zoxide imagemagick
-sudo pacman -Sy zed helix neovim lldb hugo graphviz docker
+sudo pacman -S ttf-font-nerd ttf-firacode-nerd ttf-font-awesome stow fzf eza ripgrep bat btop kitty starship
+sudo pacman -S yazi ffmpeg 7zip jq poppler fd zoxide imagemagick
+sudo pacman -S zed helix neovim lldb hugo graphviz docker
+
+# Setup appimage support
+sudo pacman -S fuse
+sudo modprobe fuse
+
 # Setup integrated video
 sudo pacman -Sy vulkan-intel
 
