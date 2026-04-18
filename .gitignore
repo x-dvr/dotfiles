@@ -2,3 +2,8 @@ dev/.config/VSCodium/*
 !dev/.config/VSCodium/User
 dev/.config/VSCodium/User/*
 !dev/.config/VSCodium/User/settings.json
+
+claude/.claude/*
+!claude/.claude/keybindings.json
+!claude/.claude/settings.json
+!claude/.claude/statusline.sh
