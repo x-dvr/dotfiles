@@ -84,5 +84,4 @@ go install github.com/bensadeh/circumflex/cmd/clx@latest
 # install bun
 curl -fsSL https://bun.sh/install | bash
 
-# Setup nvidia
 reboot

@@ -53,7 +53,7 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-function claude() {
+function claude_my() {
 	export CLAUDE_CONFIG_DIR="$HOME/.claude"
 }
 
