@@ -4,6 +4,7 @@ sudo pacman -Syu
 paru -Syu
 
 sudo pacman -S ttf-font-nerd ttf-firacode-nerd ttf-font-awesome stow fzf eza ripgrep bat btop kitty starship
+sudo pacman -S bubblewrap socat
 sudo pacman -S yazi ffmpeg 7zip jq poppler fd zoxide imagemagick
 sudo pacman -S zed helix neovim lldb hugo graphviz docker
 

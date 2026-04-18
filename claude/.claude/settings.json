@@ -21,5 +21,9 @@
     "command": "~/.claude/statusline.sh",
     "padding": 0
   },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": false
+  },
   "model": "best"
 }
