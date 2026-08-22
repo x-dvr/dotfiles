@@ -61,6 +61,26 @@ path_prepend "$HOME/flutter/bin"
 path_prepend "$HOME/.alire/bin"
 path_prepend "$HOME/.als/bin"
 
+# The GNAT toolchain Alire installed. ALS sets PATH for the alr/gprbuild it
+# spawns, but GPR2's auto-configuration runs without it, and GPR2 is what
+# derives the Ada runtime directory. With no gnat/gnatls in PATH the runtime
+# is invisible to name resolution: inside an Alire crate every reference to
+# Ada.Text_IO resolves to nothing, so hover, go-to-definition, completion and
+# semantic highlighting silently die on the whole standard library while
+# project-local names keep working. Affects any editor that starts ALS from
+# the session environment (Zed, VS Code); Helix escapes it only because
+# helix/languages.toml launches ALS through `alr exec`.
+#
+# Appended, never prepended: these directories also ship gcc/g++/ar/as/gdb,
+# which must not shadow the system toolchain. Only the gnat*/gpr* drivers are
+# absent from /usr/bin, so appending is exactly enough. Globbed because the
+# directory names carry a version hash that `alr toolchain` changes.
+for _ada_tc in "$HOME"/.local/share/alire/toolchains/gnat_native_*/bin \
+	"$HOME"/.local/share/alire/toolchains/gprbuild_*/bin; do
+	path_append "$_ada_tc"
+done
+unset _ada_tc
+
 # Bun
 export BUN_INSTALL="$HOME/.bun"
 path_prepend "$BUN_INSTALL/bin"

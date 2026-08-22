@@ -31,7 +31,7 @@
       "punctuation.delimiter":   { "color": "#737994" },
       "punctuation.special":     { "color": "#838ba7" },
       "punctuation.list_marker": { "color": "#838ba7" },
-      "operator":                { "color": "#838ba7" }
+      "operator":                { "color": "#838ba7" },
     }
   },
   "icon_theme": {
@@ -64,6 +64,7 @@
     "Ada": {
       "formatter": "language_server",
       "format_on_save": "on",
+      "semantic_tokens": "combined",
       "tab_size": 3,
       "hard_tabs": false
     }

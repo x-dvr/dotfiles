@@ -74,6 +74,14 @@ function ahx() {
 	alr exec -- hx "$@"
 }
 
+function acode() {
+	alr exec -- codium "$@"
+}
+
+function azed() {
+	alr exec -- zeditor "$@"
+}
+
 if [[ "$TERM_PROGRAM" == vscode ]]; then
 	fastfetch --logo none
 else

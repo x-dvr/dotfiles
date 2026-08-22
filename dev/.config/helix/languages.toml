@@ -95,8 +95,9 @@ completion = [{ name = "pid" }]
 args = { pid = "{0}" }
 
 [language-server.ada-language-server]
-command = "alr"
-args = ["exec", "--", "ada_language_server"]
+command = "ada_language_server"
+# command = "alr"
+# args = ["exec", "--", "ada_language_server"]
 
 # Same server handles .gpr files.
 [[language]]
@@ -104,5 +105,7 @@ name = "gpr"
 language-servers = ["ada-gpr-language-server"]
 
 [language-server.ada-gpr-language-server]
-command = "alr"
-args = ["exec", "--", "ada_language_server", "--language-gpr"]
+command = "ada_language_server"
+args = ["--language-gpr"]
+# command = "alr"
+# args = ["exec", "--", "ada_language_server", "--language-gpr"]
