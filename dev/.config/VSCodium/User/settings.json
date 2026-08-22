@@ -25,10 +25,10 @@
 	"workbench.colorCustomizations": {
 		"[Catppuccin Frappé]": {
 			"editorBracketHighlight.foreground1": "#9c7c8e",
-			"editorBracketHighlight.foreground2": "#9e868a",
-			"editorBracketHighlight.foreground3": "#9b9593",
+			"editorBracketHighlight.foreground2": "#7992ad",
+			"editorBracketHighlight.foreground3": "#9e868a",
 			"editorBracketHighlight.foreground4": "#859890",
-			"editorBracketHighlight.foreground5": "#7992ad",
+			"editorBracketHighlight.foreground5": "#9b9593",
 			"editorBracketHighlight.foreground6": "#9186b1",
 			"editorBracketHighlight.unexpectedBracket.foreground": "#e78284"
 		}
