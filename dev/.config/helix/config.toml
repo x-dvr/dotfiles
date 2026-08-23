@@ -17,6 +17,10 @@ true-color = true
 [editor.file-picker]
 hidden = false
 
+[editor.terminal]
+command = "kitty"
+args = ["-e"]
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
