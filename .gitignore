@@ -2,6 +2,7 @@ dev/.config/VSCodium/*
 !dev/.config/VSCodium/User
 dev/.config/VSCodium/User/*
 !dev/.config/VSCodium/User/settings.json
+!dev/.config/VSCodium/User/keybindings.json
 
 dev/.config/alire/indexes/*
 !dev/.config/alire/indexes/providers.toml

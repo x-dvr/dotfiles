@@ -1,0 +1,63 @@
+// Place your key bindings in this file to override the defaults.
+//
+// Helix Mode cannot see which part of the workbench holds focus — VS Code
+// exposes no API for it — so the keys that move focus announce it themselves
+// and the line numbers follow along.
+//
+// Two conventions hold throughout:
+//   * every binding is guarded by `hxMode.active`, so with the extension
+//     disabled the guard fails and VS Code falls back to the stock binding;
+//   * the real command runs first, so a bookkeeping failure can never swallow
+//     the navigation.
+[
+  // ── Integrated terminal ──────────────────────────────────────────────────
+  {
+    "key": "ctrl+`",
+    "command": "runCommands",
+    "args": {
+      "commands": ["workbench.action.terminal.toggleTerminal", "hx-mode.editorLostFocus"]
+    },
+    "when": "hxMode.active && editorTextFocus"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "runCommands",
+    "args": {
+      "commands": ["workbench.action.terminal.toggleTerminal", "hx-mode.editorRegainedFocus"]
+    },
+    "when": "hxMode.active && terminalFocus"
+  },
+
+  // ── Claude Code chat ─────────────────────────────────────────────────────
+  // Mirrors the extension's own pair, which already splits on `editorTextFocus`:
+  // focus on the way out, blur on the way back.
+  {
+    "key": "ctrl+escape",
+    "command": "runCommands",
+    "args": { "commands": ["claude-vscode.focus", "hx-mode.editorLostFocus"] },
+    "when": "hxMode.active && !config.claudeCode.useTerminal && editorTextFocus"
+  },
+  {
+    "key": "ctrl+escape",
+    "command": "runCommands",
+    "args": { "commands": ["claude-vscode.blur", "hx-mode.editorRegainedFocus"] },
+    "when": "hxMode.active && !config.claudeCode.useTerminal && !editorTextFocus"
+  },
+
+  // ── Sidebar ──────────────────────────────────────────────────────────────
+  // Stock ctrl+0 only goes one way; the second binding makes it a round trip.
+  {
+    "key": "ctrl+0",
+    "command": "runCommands",
+    "args": { "commands": ["workbench.action.focusSideBar", "hx-mode.editorLostFocus"] },
+    "when": "hxMode.active && editorTextFocus"
+  },
+  {
+    "key": "ctrl+0",
+    "command": "runCommands",
+    "args": {
+      "commands": ["workbench.action.focusActiveEditorGroup", "hx-mode.editorRegainedFocus"]
+    },
+    "when": "hxMode.active && sideBarFocus"
+  }
+]
