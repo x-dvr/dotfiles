@@ -61,8 +61,21 @@ language-servers = ["codebook"]
 
 # --- Ada ---------------------------------------------------------------------
 # Formatting is done by ALS over LSP (it wraps GNATformat), so no external
-# formatter command is needed. Debugging uses GDB's own DAP interpreter,
-# which is the only adapter with real Ada type/array support.
+# formatter command is needed.
+#
+# Debugging goes through cppdbg (MIEngine driving gdb over MI) rather than gdb's
+# own DAP interpreter. gdb-dap cannot give the debuggee a terminal of its own:
+# grep its implementation in /usr/share/gdb/python/gdb/dap and runInTerminal
+# appears nowhere, and `launch` accepts no console option, so the program
+# inherits gdb's stdio — which under a TUI editor is Helix's own terminal.
+# Anything that reads input is unusable. cppdbg asks Helix for a terminal via a
+# runInTerminal request, which is why [editor.terminal] in config.toml is a hard
+# requirement here. Ada type and array printing is unaffected: both routes end
+# at the same gdb, so aggregates and `V(2)` indexing still work.
+#
+# miDebuggerPath is the system gdb deliberately — same 17.2 as the Alire
+# toolchain's, but built with Python, which the Alire one lacks and
+# -enable-pretty-printing needs.
 
 [[language]]
 name = "ada"
@@ -70,29 +83,42 @@ auto-format = true
 indent = { tab-width = 3, unit = "   " }
 language-servers = ["ada-language-server"]
 
+# The adapter ships inside the VS Code cpp debug extension; the path carries
+# that extension's version and will break when it updates.
 [language.debugger]
-name = "gdb"
+name = "cppdbg"
 transport = "stdio"
-command = "gdb"
-args = ["--interpreter=dap"]
+command = "/home/vir/.vscode-oss/extensions/kylinideteam.cppdebug-0.4.0-linux-x64/dist/debugAdapter/OpenDebugAD7"
 
+# cwd is mandatory — cppdbg rejects a launch with "property 'cwd' is missing or
+# empty" — but Helix substitutes only the {N} completion slots and has no
+# workspace-root variable. "." works because Helix starts the adapter in the
+# project directory, so MIEngine resolves it there. Do not drop it.
+#
+# setupCommands mirror the zed-cppdbg extension so both editors debug alike.
+# "set multiple-symbols cancel" stops gdb interrogating you about which
+# instantiation you meant, which Ada generics produce in quantity.
 [[language.debugger.templates]]
 name = "binary"
 request = "launch"
 completion = [{ name = "binary", completion = "filename" }]
-args = { program = "{0}" }
+args = { type = "cppdbg", MIMode = "gdb", miDebuggerPath = "/usr/bin/gdb", program = "{0}", cwd = ".", externalConsole = false, setupCommands = [{ text = "-enable-pretty-printing", ignoreFailures = true }, { text = "set multiple-symbols cancel", ignoreFailures = false }] }
 
+# stopAtEntry breaks on main, which for Ada is the C wrapper that runs adainit
+# first — so this lands before elaboration, unlike gdb-dap's
+# stopAtBeginningOfMainSubprogram, which stopped at _ada_<main> itself.
 [[language.debugger.templates]]
-name = "binary (stop at main)"
+name = "binary (stop at entry)"
 request = "launch"
 completion = [{ name = "binary", completion = "filename" }]
-args = { program = "{0}", stopAtBeginningOfMainSubprogram = true }
+args = { type = "cppdbg", MIMode = "gdb", miDebuggerPath = "/usr/bin/gdb", program = "{0}", cwd = ".", externalConsole = false, stopAtEntry = true, setupCommands = [{ text = "-enable-pretty-printing", ignoreFailures = true }, { text = "set multiple-symbols cancel", ignoreFailures = false }] }
 
+# cppdbg needs the binary as well as the pid, unlike gdb-dap which took pid alone.
 [[language.debugger.templates]]
 name = "attach"
 request = "attach"
-completion = [{ name = "pid" }]
-args = { pid = "{0}" }
+completion = [{ name = "binary", completion = "filename" }, { name = "pid" }]
+args = { type = "cppdbg", MIMode = "gdb", miDebuggerPath = "/usr/bin/gdb", program = "{0}", cwd = ".", processId = "{1}", setupCommands = [{ text = "-enable-pretty-printing", ignoreFailures = true }, { text = "set multiple-symbols cancel", ignoreFailures = false }] }
 
 [language-server.ada-language-server]
 command = "ada_language_server"
