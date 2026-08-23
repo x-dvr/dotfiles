@@ -92,7 +92,7 @@ func run() error {
 		cpuSpec      = flag.String("cpu", defaultCPUCurve, "CPU fan curve as temp:boost,... (boost 0-255)")
 		gpuSpec      = flag.String("gpu", defaultGPUCurve, "GPU fan curve as temp:boost,... (boost 0-255)")
 		interval     = flag.Duration("interval", 2*time.Second, "sampling interval")
-		hysteresis   = flag.Int("hysteresis", 12, "boost must fall this far below the applied value before easing off")
+		hysteresis   = flag.Int("hysteresis", 7, "boost must fall this far below the applied value before easing off")
 		reassert     = flag.Duration("reassert", 30*time.Second, "re-write the boost this often even when it has not changed (0 disables)")
 		profileTemp  = flag.Float64("profile-temp", 70, "force the performance platform profile above this temperature in C (0 disables)")
 		profileDelay = flag.Duration("profile-delay", 30*time.Second, "how long the temperature must stay above -profile-temp before the profile is forced")
